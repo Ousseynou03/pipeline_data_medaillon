@@ -4,11 +4,11 @@
 ![Architecture](assets/archi.png)
 
 ## Data Lineage du projet
-![Data flow](assets/data flow.png)
+![Data flow](assets/data_flow.png)
 
 
 ## Data marts
-![Data Marts](assets/data marts.png)
+![Data Marts](assets/data_marts.png)
 
 ## Aprés la transformation dans la couche silver on a eu obtenu ces nouveaux dataframes stocker dans data
 ```text
