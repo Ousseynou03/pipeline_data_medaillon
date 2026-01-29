@@ -1,8 +1,5 @@
 import os
-from pyspark.sql import SparkSession
 from pyspark.sql.functions import current_timestamp
-
-spark = SparkSession.builder.appName("BronzeIngest").getOrCreate()
 
 bronze_path = "data/bronze"
 os.makedirs(bronze_path, exist_ok=True)
@@ -16,7 +13,7 @@ source_file = [
     "dataset/source_erp/PX_CAT_G1V2.csv",
 ]
 
-def bronze_ingest():
+def bronze_ingest(spark):
     for datas in source_file:
         df = spark.read.csv(datas, inferSchema=True, header=True)
         df = df.withColumn("_ingestion_date", current_timestamp())
