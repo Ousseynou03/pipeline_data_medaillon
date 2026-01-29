@@ -50,7 +50,7 @@ def transform_cust_info(spark, write_output=True):
     )
 
     if write_output:
-        df.write.mode("overwrite").parquet(silver_path)
+        df.write.mode("overwrite").csv(silver_path, header=True)
         print(f"[INFO] Silver écrit dans {silver_path}")
 
     print("[INFO] Transformation Silver terminée\n")

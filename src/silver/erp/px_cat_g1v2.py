@@ -23,7 +23,8 @@ def transform_px_cat_g1v2(spark, write_output=True):
 
     # Écriture Silver
     if write_output:
-        df.write.mode("overwrite").csv(silver_path, header=True)
+        #df.write.mode("overwrite").csv(silver_path, header=True)
+        df.write.mode("overwrite").option("header", True).csv(silver_path)
         print(f"[INFO] Silver px_cat_g1v2 écrit dans : {silver_path}")
 
     print("[INFO] ===== Transformation Silver px_cat_g1v2 terminée =====\n")
